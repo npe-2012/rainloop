@@ -18,6 +18,7 @@ RUN echo "@community https://nl.alpinelinux.org/alpine/v3.5/community" >> /etc/a
     nginx \
     s6 \
     su-exec \
+    sqlite \
     php7-fpm@community \
     php7-curl@community \
     php7-iconv@community \
@@ -56,6 +57,6 @@ RUN chmod +x /usr/local/bin/run.sh /etc/s6.d/*/* /etc/s6.d/.s6-svscan/*
 
 VOLUME /rainloop/data
 
-EXPOSE 8888
+EXPOSE 80
 
 CMD ["run.sh"]
