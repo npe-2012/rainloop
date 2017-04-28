@@ -1,5 +1,3 @@
-# hardware/rainloop
-
 ![](https://i.goopics.net/nI.png)
 
 ### What is this ?
@@ -20,7 +18,7 @@ Rainloop is a simple, modern & fast web-based client. More details on the [offic
 
 ### Ports
 
-- **8888**
+- **80**
 
 ### Environment variables
 
@@ -29,13 +27,6 @@ Rainloop is a simple, modern & fast web-based client. More details on the [offic
 | **UID** | rainloop user id | *optional* | 991
 | **GID** | rainloop group id | *optional* | 991
 
-### Reverse proxy example with nginx
-
-https://github.com/hardware/mailserver/wiki/Reverse-proxy-configuration
-
-### Initial configuration
-
-https://github.com/hardware/mailserver/wiki/Rainloop-initial-configuration
 
 ### Docker-compose
 
@@ -44,24 +35,10 @@ https://github.com/hardware/mailserver/wiki/Rainloop-initial-configuration
 rainloop:
   image: hardware/rainloop
   container_name: rainloop
-  links:
-    - mariadb:mariadb
   volumes:
     - /mnt/docker/rainloop:/rainloop/data
 
-# if using mariadb as contacts database :
 
-mariadb:
-  image: mariadb:10.1
-  container_name: mariadb
-  volumes:
-    - /mnt/docker/mysql/db:/var/lib/mysql
-  environment:
-    - MYSQL_ROOT_PASSWORD=xxxxxxx
-    - MYSQL_DATABASE=rainloop
-    - MYSQL_USER=rainloop
-    - MYSQL_PASSWORD=xxxxxxx
-```
 
 #### Run !
 
